@@ -8,8 +8,8 @@ A tensor flow script to classify a linearly separable dataset
 #%%
 import tensorflow as tf
 import numpy as np
-
-filename_queue = tf.train.string_input_producer(['linearData.csv'])
+import matplotlib.pyplot as plt
+filename_queue = tf.train.string_input_producer(['../datasets/linearData.csv'])
 
 reader = tf.TextLineReader()
 key, value = reader.read(filename_queue)
@@ -30,3 +30,6 @@ with tf.Session() as sess:
 
   coord.request_stop()
   coord.join(threads)
+
+  
+plt.scatter(examples[:,0], examples[:,1], c = labels)
