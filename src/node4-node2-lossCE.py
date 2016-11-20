@@ -47,7 +47,7 @@ def init_weights(shape, init_method='xavier', xavier_params = (None, None)):
         return tf.Variable(tf.random_uniform(shape, minval=low, maxval=high, dtype=tf.float32))
 #%%
 #Training Neural Net
-num_hidden = 15
+num_hidden = 10
 x = tf.placeholder(tf.float32, [None, 2])
 W1 = init_weights([2, num_hidden], init_method = 'xavier', xavier_params = (2, num_hidden))#tf.Variable(tf.random_normal([2, num_hidden], stddev = 0.1))
 b1 = init_weights([1, num_hidden], init_method = 'uniform')
